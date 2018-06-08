@@ -20,9 +20,9 @@
 [download-image]: https://img.shields.io/npm/dm/egg-rpc-generator.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-rpc-generator
 
-RPC tools for egg framework
+Egg 的 RPC 工具，负责生成 proxy 和 schema 等。
 
-## Install
+## 安装
 
 ```bash
 $ npm i egg-rpc-generator -g

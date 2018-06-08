@@ -2,10 +2,17 @@
   "name": "egg-rpc-generator",
   "version": "1.0.0",
   "description": "RPC tools for egg framework",
-  "main": "index.js",
+  "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "bin": {
+    "egg-rpc-generator": "bin/egg-rpc-generator"
+  },
   "scripts": {
     "autod": "autod",
-    "lint": "eslint . --ext .js --fix",
+    "lint": "eslint . --ext .js",
     "cov": "TEST_TIMEOUT=10000 egg-bin cov",
     "test": "npm run lint && npm run test-local",
     "test-local": "egg-bin test",
@@ -29,7 +36,15 @@
   },
   "homepage": "https://github.com/eggjs/egg-rpc-generator#readme",
   "dependencies": {
-
+    "antpb": "^1.0.0",
+    "chalk": "^2.4.1",
+    "debug": "^3.1.0",
+    "egg-utils": "^2.4.0",
+    "handlebars": "^4.0.11",
+    "is-type-of": "^1.2.0",
+    "mz": "^2.7.0",
+    "mz-modules": "^2.1.0",
+    "sdk-base": "^3.4.0"
   },
   "devDependencies": {
     "autod": "^3.0.1",

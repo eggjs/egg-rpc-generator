@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+'use strict';
+
+require('colors');
+const program = require('commander');
+const EggRpcGenerator = require('../lib');
+
+program
+  .option('-b, --base [base]', 'the base directory of the project')
+  .option('-p, --plugin [plugin]', 'the plugins used in generation process')
+  .option('-f, --framework [framework]', 'specify framework that can be absolute path or npm package')
+  .allowUnknownOption()
+  .parse(process.argv);
+
+const opts = {
+  baseDir: program.base || process.cwd(),
+  plugin: program.plugin ? program.split(',') : ['protobuf'],
+  framework: program.framework,
+};
+
+(async() => {
+  const generator = new EggRpcGenerator(opts);
+  await generator.execute();
+})().catch(err => {
+  if (!err) return;
+  console.error(err.stack.red);
+  process.exit(1);
+});

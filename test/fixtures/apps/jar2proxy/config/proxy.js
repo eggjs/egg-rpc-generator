@@ -16,5 +16,17 @@ module.exports = {
       artifactId: 'jar2proxy-facade',
       version: '1.0.0',
     }],
+  }, {
+    appName: 'dubbo',
+    api: {
+      UserService: {
+        interfaceName: 'org.eggjs.dubbo.UserService',
+      },
+    },
+    dependency: [{
+      groupId: 'eggjs',
+      artifactId: 'dubbo-demo-api',
+      version: '1.0-SNAPSHOT',
+    }],
   }],
 };

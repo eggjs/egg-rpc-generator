@@ -40,7 +40,9 @@ module.exports = function (app) {
 
     // java source code: {{ item.raw }}
     // returnType: {{ item.returnType.canonicalName }}
-    {%- if item.commentText %}{{ item.commentText | comment(4) }}{%- endif %}
+    {%- if item.commentText %}
+    {{ item.commentText | comment(4) }}
+    {%- endif %}
     async {{ item.methodName }}{%- if item.isOverloading %}${{ item.uniqueId }}{%- endif %}({%- for arg in item.params %}{{ arg.paramName }}{%- if loop.last != true %}, {%- endif %}{%- endfor %}) {
       const args = [
         {%- for arg in item.params %}

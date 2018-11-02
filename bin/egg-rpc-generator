@@ -15,15 +15,19 @@ program
 
 const opts = {
   baseDir: program.base || process.cwd(),
-  plugin: program.plugin ? program.split(',') : ['protobuf'],
+  plugin: program.plugin ? program.split(',') : [ 'protobuf', 'jar2proxy' ],
   framework: program.framework,
 };
 
-(async() => {
+(async () => {
   const generator = new EggRpcGenerator(opts);
   await generator.execute();
-})().catch(err => {
-  if (!err) return;
-  console.error(err.stack.red);
-  process.exit(1);
-});
+})()
+.then(() => {
+    process.exit(0);
+  })
+  .catch(err => {
+    if (!err) return;
+    console.error(err.stack.red);
+    process.exit(1);
+  });

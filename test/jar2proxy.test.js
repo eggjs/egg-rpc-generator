@@ -22,6 +22,7 @@ describe('test/jar2proxy.test.js', () => {
 
     await Promise.all([
       'app/proxy/userConsultFacade.js',
+      'app/proxy/userService.js',
       'app/proxy_class/index.js',
       'app/proxy_class/com/ali/jar2proxy/extend/model/BusinessContext.js',
       'app/proxy_class/com/ali/jar2proxy/generic/enums/TOPIC_TYPE.js',
@@ -31,8 +32,13 @@ describe('test/jar2proxy.test.js', () => {
       return fs.exists(path.join(__dirname, 'fixtures/apps/jar2proxy', file));
     }));
 
-    const actual = await fs.readFile(path.join(__dirname, 'fixtures/apps/jar2proxy/app/proxy/userConsultFacade.js'), 'utf8');
-    const expect = await fs.readFile(path.join(__dirname, 'fixtures/expect/userConsultFacade.js'), 'utf8');
+    let actual = await fs.readFile(path.join(__dirname, 'fixtures/apps/jar2proxy/app/proxy/userConsultFacade.js'), 'utf8');
+    let expect = await fs.readFile(path.join(__dirname, 'fixtures/expect/userConsultFacade.js'), 'utf8');
+
+    assert(actual === expect);
+
+    actual = await fs.readFile(path.join(__dirname, 'fixtures/apps/jar2proxy/app/proxy/userService.js'), 'utf8');
+    expect = await fs.readFile(path.join(__dirname, 'fixtures/expect/userService.js'), 'utf8');
 
     assert(actual === expect);
   });

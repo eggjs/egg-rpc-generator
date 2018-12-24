@@ -15,7 +15,7 @@ program
 
 const opts = {
   baseDir: program.base || process.cwd(),
-  plugin: program.plugin ? program.split(',') : [ 'protobuf', 'jar2proxy' ],
+  plugin: program.plugin ? program.plugin.split(',') : [ 'protobuf', 'jar2proxy' ],
   framework: program.framework,
 };
 

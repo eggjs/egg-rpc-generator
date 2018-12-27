@@ -13,6 +13,7 @@ describe('test/index.test.js', () => {
       rimraf(path.join(__dirname, 'fixtures/apps/rpc/run')),
       rimraf(path.join(__dirname, 'fixtures/apps/rpc/app/proxy')),
       rimraf(path.join(__dirname, 'fixtures/apps/rpc/run')),
+      rimraf(path.join(__dirname, 'fixtures/apps/keepCase/run')),
     ]);
   });
 

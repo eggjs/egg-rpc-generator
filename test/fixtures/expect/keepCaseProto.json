@@ -1,0 +1,69 @@
+{
+  "nested": {
+    "com": {
+      "nested": {
+        "alipay": {
+          "nested": {
+            "sofa": {
+              "nested": {
+                "rpc": {
+                  "nested": {
+                    "test": {
+                      "options": {
+                        "java_multiple_files": false
+                      },
+                      "nested": {
+                        "ProtoService": {
+                          "methods": {
+                            "echoObj": {
+                              "requestType": "EchoRequest",
+                              "responseType": "EchoResponse"
+                            }
+                          }
+                        },
+                        "EchoRequest": {
+                          "fields": {
+                            "name": {
+                              "type": "string",
+                              "id": 1
+                            },
+                            "group": {
+                              "type": "Group",
+                              "id": 2
+                            },
+                            "keep_case": {
+                              "type": "int32",
+                              "id": 3
+                            }
+                          }
+                        },
+                        "EchoResponse": {
+                          "fields": {
+                            "code": {
+                              "type": "int32",
+                              "id": 1
+                            },
+                            "message": {
+                              "type": "string",
+                              "id": 2
+                            }
+                          }
+                        },
+                        "Group": {
+                          "values": {
+                            "A": 0,
+                            "B": 1
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -42,12 +42,14 @@ $ egg-rpc-generator -h
     -b, --base [base]            the base directory of the project
     -p, --plugin [plugin]        the plugins used in generation process
     -f, --framework [framework]  specify framework that can be absolute path or npm package
+    -k, --keep-case              keeps field casing instead of converting to camel case
     -h, --help                   output usage information
 ```
 
 - `-b, --base` the egg project root folder, default is `process.cwd()`
 - `-p, --plugin` the plugins will be used in generation process, by default `protobuf` plugin will be activated
 - `-f, --framework` specify the custom egg framework name or path
+- `-k, --keep-case` keeps field casing instead of converting to camel case
 
 
 run `egg-rpc-generator` under the egg project root folder

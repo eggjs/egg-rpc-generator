@@ -42,12 +42,14 @@ $ egg-rpc-generator -h
     -b, --base [base]            the base directory of the project
     -p, --plugin [plugin]        the plugins used in generation process
     -f, --framework [framework]  specify framework that can be absolute path or npm package
+    -k, --keep-case              keeps field casing instead of converting to camel case
     -h, --help                   output usage information
 ```
 
 - `-b, --base` the egg project root folder, default is `process.cwd()`
 - `-p, --plugin` the plugins will be used in generation process, by default `protobuf` plugin will be activated
 - `-f, --framework` specify the custom egg framework name or path
+- `-k, --keep-case` keeps field casing instead of converting to camel case
 
 
 run `egg-rpc-generator` under the egg project root folder
@@ -87,7 +89,7 @@ All done
 ## Build-in Plugin
 
 ### Protobuf Plugin
-to generate rpc schema and proxy files from *.proto files
+To generate rpc schema and proxy files from *.proto files
 
 - step 1: put your *.proto files into `$base/proto` folder
 
@@ -158,11 +160,11 @@ module.exports = {
 
 - step 3: run `egg-rpc-generator` under the project folder
 
-will generate `app/rpc/ProtoService.js` and `run/proto.json`
+will generate `app/proxy/ProtoService.js` and `run/proto.json`
 ```bash
 .
 ├── app
-│   └── rpc
+│   └── proxy
 │       └── ProtoService.js
 ├── config
 │   ├── config.default.js
@@ -174,7 +176,7 @@ will generate `app/rpc/ProtoService.js` and `run/proto.json`
     └── proto.json
 ```
 
-`app/rpc/ProtoService.js`
+`app/proxy/ProtoService.js`
 ```js
 // Don't modified this file, it's auto created by egg-rpc-generator
 
@@ -221,6 +223,79 @@ module.exports = app => {
 /* eslint-enable */
 ```
 
+### Jar2Proxy Plugin
+
+To generate rpc proxy from jar.
+
+- step 1: config `config/proxy.js`
+
+Please refer to [jar2proxy configuration](https://github.com/eggjs/jar2proxy#config-configproxyjs) for detail.
+
+- step 2: put jar file into `$app_root/assembly` folder
+
+```bash
+.
+├── app
+├── assembly
+│   ├── dubbo-demo-api-1.0-SNAPSHOT-sources.jar
+│   ├── dubbo-demo-api-1.0-SNAPSHOT.jar
+│   ├── jar2proxy-facade-1.0.0-sources.jar
+│   └── jar2proxy-facade-1.0.0.jar
+├── config
+│   └── proxy.js
+└── package.json
+```
+
+- step 3: run `egg-rpc-generator` under the project folder
+
+will generate following folders:
+
+  - `app/proxy` all proxy files.
+  - `app/proxy_class`  all class definitions
+  - `app/proxy_enums`  all enums definitions
+
+### Jsdoc2Jar
+
+To generator jave interface definitions(jars) from JavaScript comments.
+
+- step 1: config `config/config.default.js`
+
+```js
+exports.rpc = {
+  server: {
+    namespace: 'com.eggjs.xxx',
+    // group: 'xxx',
+    // version: '1.0.0',
+    // pom: {
+    //   version: '1.0.0',
+    //   groupId: 'com.eggjs.facade',
+    //   artifactId: 'your-artifactId',
+    // },
+  },
+};
+```
+
+- step 2: write rpc service with js comments
+
+```js
+// $app_root/rpc/HelloService.js
+
+/**
+ * say hello
+ * @param {String} name - user name
+ * @return {String} hello words
+ * @rpc
+ */
+exports.sayHello = async function (name) {
+  return 'hello ' + name;
+};
+```
+
+- step 3: run `egg-rpc-generator` under the project folder
+
+will generate:
+  - `$app_root/src`: java interface definitions source code
+  - `$app_root/target`: the output of `mvn clean install`
 
 
 ## Write Your Plugin

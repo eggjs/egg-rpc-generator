@@ -10,13 +10,15 @@ program
   .option('-b, --base [base]', 'the base directory of the project')
   .option('-p, --plugin [plugin]', 'the plugins used in generation process')
   .option('-f, --framework [framework]', 'specify framework that can be absolute path or npm package')
+  .option('-k, --keep-case', 'keeps field casing instead of converting to camel case')
   .allowUnknownOption()
   .parse(process.argv);
 
 const opts = {
   baseDir: program.base || process.cwd(),
-  plugin: program.plugin ? program.plugin.split(',') : [ 'protobuf', 'jar2proxy' ],
+  plugin: program.plugin ? program.plugin.split(',') : ['protobuf', 'jar2proxy'],
   framework: program.framework,
+  keepCase: program.keepCase,
 };
 
 (async () => {

@@ -66,6 +66,7 @@
     "node": ">= 8.0.0"
   },
   "ci": {
+    "type": "travis",
     "version": "8, 10"
   }
 }

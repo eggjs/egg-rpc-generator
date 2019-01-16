@@ -1,0 +1,197 @@
+{
+  "com.eggjs.FooService": {
+    "appName": "rpc-server",
+    "canonicalName": "com.eggjs.FooService",
+    "codeSource": "rpc-server-facade-1.0.0.jar",
+    "methods": [
+      {
+        "name": "getUser",
+        "parameterTypes": [
+          "java.lang.String"
+        ],
+        "returnType": "java.util.Map"
+      },
+      {
+        "name": "testType",
+        "parameterTypes": [
+          "java.lang.Integer",
+          "java.lang.Integer",
+          "double",
+          "java.lang.Boolean",
+          "java.lang.Boolean",
+          "java.lang.Long",
+          "java.lang.String",
+          "java.util.Map",
+          "java.util.Map",
+          "java.util.List",
+          "java.util.List"
+        ],
+        "returnType": "java.lang.String"
+      }
+    ],
+    "classMaps": {
+      "com.eggjs.x.common.Request": {
+        "name": {
+          "type": "java.lang.String"
+        },
+        "obj": {
+          "type": "java.util.Map",
+          "generic": [
+            {
+              "type": "java.lang.String"
+            },
+            {
+              "type": "com.eggjs.x.common.Sub"
+            }
+          ]
+        }
+      },
+      "com.eggjs.x.common.Sub": {
+        "name": {
+          "type": "java.lang.String"
+        }
+      },
+      "com.eggjs.x.common.Response": {
+        "result": {
+          "type": "java.util.Map",
+          "generic": [
+            {
+              "type": "java.lang.String"
+            },
+            {
+              "type": "java.lang.String"
+            }
+          ]
+        },
+        "resultStatus": {
+          "type": "java.lang.Integer"
+        }
+      },
+      "com.eggjs.x.common.GenericResult": {
+        "result": {
+          "type": "T",
+          "typeAliasIndex": 0
+        },
+        "success": {
+          "type": "java.lang.Boolean"
+        },
+        "error": {
+          "type": "U",
+          "typeAliasIndex": 1
+        }
+      },
+      "com.eggjs.x.common.HelloResponse": {
+        "hello": {
+          "type": "java.lang.String"
+        }
+      },
+      "com.eggjs.x.common.HelloError": {
+        "name": {
+          "type": "java.lang.String"
+        },
+        "message": {
+          "type": "java.lang.String"
+        }
+      }
+    }
+  },
+  "com.eggjs.x.common.HelloService": {
+    "appName": "rpc-server",
+    "canonicalName": "com.eggjs.x.common.HelloService",
+    "codeSource": "rpc-server-facade-1.0.0.jar",
+    "methods": [
+      {
+        "name": "send",
+        "parameterTypes": [
+          "com.eggjs.x.common.Request"
+        ],
+        "returnType": "com.eggjs.x.common.Response"
+      },
+      {
+        "name": "sendGenericResult",
+        "parameterTypes": [
+          "com.eggjs.x.common.Request"
+        ],
+        "returnType": "com.eggjs.x.common.GenericResult",
+        "generic": [
+          {
+            "type": "java.util.List",
+            "generic": [
+              {
+                "type": "com.eggjs.x.common.HelloResponse"
+              }
+            ]
+          },
+          {
+            "type": "com.eggjs.x.common.HelloError"
+          }
+        ]
+      }
+    ],
+    "classMaps": {
+      "com.eggjs.x.common.Request": {
+        "name": {
+          "type": "java.lang.String"
+        },
+        "obj": {
+          "type": "java.util.Map",
+          "generic": [
+            {
+              "type": "java.lang.String"
+            },
+            {
+              "type": "com.eggjs.x.common.Sub"
+            }
+          ]
+        }
+      },
+      "com.eggjs.x.common.Sub": {
+        "name": {
+          "type": "java.lang.String"
+        }
+      },
+      "com.eggjs.x.common.Response": {
+        "result": {
+          "type": "java.util.Map",
+          "generic": [
+            {
+              "type": "java.lang.String"
+            },
+            {
+              "type": "java.lang.String"
+            }
+          ]
+        },
+        "resultStatus": {
+          "type": "java.lang.Integer"
+        }
+      },
+      "com.eggjs.x.common.GenericResult": {
+        "result": {
+          "type": "T",
+          "typeAliasIndex": 0
+        },
+        "success": {
+          "type": "java.lang.Boolean"
+        },
+        "error": {
+          "type": "U",
+          "typeAliasIndex": 1
+        }
+      },
+      "com.eggjs.x.common.HelloResponse": {
+        "hello": {
+          "type": "java.lang.String"
+        }
+      },
+      "com.eggjs.x.common.HelloError": {
+        "name": {
+          "type": "java.lang.String"
+        },
+        "message": {
+          "type": "java.lang.String"
+        }
+      }
+    }
+  }
+}

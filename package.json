@@ -13,7 +13,7 @@
   "scripts": {
     "autod": "autod",
     "lint": "eslint . --ext .js",
-    "cov": "TEST_TIMEOUT=10000 egg-bin cov",
+    "cov": "TEST_TIMEOUT=30000 egg-bin cov",
     "test": "npm run lint && npm run test-local",
     "test-local": "egg-bin test",
     "pkgfiles": "egg-bin pkgfiles --check",

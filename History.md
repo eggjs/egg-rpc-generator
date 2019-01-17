@@ -1,4 +1,10 @@
 
+1.3.0 / 2019-01-18
+==================
+
+**others**
+  * [[`e7076ab`](http://github.com/eggjs/egg-rpc-generator/commit/e7076abd55b6d0315cf4c6af83ea04dc8d02615c)] - refactor: enable jsdoc2jar by default (gxcsoccer <<gxcsoccer@126.com>>)
+
 1.2.0 / 2019-01-16
 ==================
 

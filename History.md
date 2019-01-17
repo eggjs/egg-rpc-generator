@@ -1,4 +1,10 @@
 
+1.3.1 / 2019-01-18
+==================
+
+**fixes**
+  * [[`112c0e2`](http://github.com/eggjs/egg-rpc-generator/commit/112c0e2d4efd74ef33ced799a54a6d06ec3482f2)] - fix: should ignore jsdoc2jar if rpc folder not exists (gxcsoccer <<gxcsoccer@126.com>>)
+
 1.3.0 / 2019-01-18
 ==================
 

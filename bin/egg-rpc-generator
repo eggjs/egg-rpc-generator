@@ -2,7 +2,6 @@
 
 'use strict';
 
-require('colors');
 const program = require('commander');
 const EggRpcGenerator = require('../lib');
 
@@ -16,7 +15,7 @@ program
 
 const opts = {
   baseDir: program.base || process.cwd(),
-  plugin: program.plugin ? program.plugin.split(',') : ['protobuf', 'jar2proxy', 'jsdoc2jar'],
+  plugin: program.plugin ? program.plugin.split(',') : [ 'protobuf', 'jar2proxy', 'jsdoc2jar' ],
   framework: program.framework,
   keepCase: program.keepCase,
 };
@@ -30,6 +29,6 @@ const opts = {
   })
   .catch(err => {
     if (!err) return;
-    console.error(err.stack.red);
+    console.error(err.stack);
     process.exit(1);
   });

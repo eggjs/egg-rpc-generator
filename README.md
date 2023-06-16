@@ -1,22 +1,13 @@
 # egg-rpc-generator
 
 [![NPM version][npm-image]][npm-url]
-[![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
-[![David deps][david-image]][david-url]
-[![Known Vulnerabilities][snyk-image]][snyk-url]
 [![npm download][download-image]][download-url]
 
 [npm-image]: https://img.shields.io/npm/v/egg-rpc-generator.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/egg-rpc-generator
-[travis-image]: https://img.shields.io/travis/eggjs/egg-rpc-generator.svg?style=flat-square
-[travis-url]: https://travis-ci.org/eggjs/egg-rpc-generator
 [codecov-image]: https://img.shields.io/codecov/c/github/eggjs/egg-rpc-generator.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/eggjs/egg-rpc-generator?branch=master
-[david-image]: https://img.shields.io/david/eggjs/egg-rpc-generator.svg?style=flat-square
-[david-url]: https://david-dm.org/eggjs/egg-rpc-generator
-[snyk-image]: https://snyk.io/test/npm/egg-rpc-generator/badge.svg?style=flat-square
-[snyk-url]: https://snyk.io/test/npm/egg-rpc-generator
 [download-image]: https://img.shields.io/npm/dm/egg-rpc-generator.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-rpc-generator
 
@@ -321,3 +312,15 @@ $ egg-rpc-generator -p pluginName1,pluginName2,...
 ## License
 
 [MIT](LICENSE)
+
+<!-- GITCONTRIBUTOR_START -->
+
+## Contributors
+
+|[<img src="https://avatars.githubusercontent.com/u/1207064?v=4" width="100px;"/><br/><sub><b>gxcsoccer</b></sub>](https://github.com/gxcsoccer)<br/>|[<img src="https://avatars.githubusercontent.com/u/6186521?v=4" width="100px;"/><br/><sub><b>zhoukk</b></sub>](https://github.com/zhoukk)<br/>|
+| :---: | :---: |
+
+
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Fri Jun 16 2023 21:14:08 GMT+0800`.
+
+<!-- GITCONTRIBUTOR_END -->

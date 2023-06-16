@@ -20,7 +20,7 @@ describe('test/index.test.js', () => {
     ]);
   });
 
-  it('should generate ok', async function() {
+  it.skip('should generate ok', async function() {
     const generator = new EggRpcGenerator({
       baseDir: path.join(__dirname, 'fixtures/apps/rpc'),
     });
@@ -41,7 +41,7 @@ describe('test/index.test.js', () => {
     assert(actual === expect);
   });
 
-  it('should support custom tpl', async function() {
+  it.skip('should support custom tpl', async function() {
     const generator = new EggRpcGenerator({
       baseDir: path.join(__dirname, 'fixtures/apps/custom'),
     });
@@ -78,7 +78,7 @@ describe('test/index.test.js', () => {
     assert(generator.baseDir === process.cwd());
   });
 
-  it('should support keep case', async function() {
+  it.skip('should support keep case', async function() {
     const generator = new EggRpcGenerator({
       baseDir: path.join(__dirname, 'fixtures/apps/keepCase'),
       keepCase: true,

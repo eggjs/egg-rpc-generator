@@ -11,14 +11,11 @@
     "egg-rpc-generator": "bin/egg-rpc-generator"
   },
   "scripts": {
-    "autod": "autod",
     "lint": "eslint . --ext .js",
-    "cov": "TEST_TIMEOUT=30000 egg-bin cov",
     "test": "npm run lint && npm run test-local",
     "test-local": "egg-bin test",
-    "pkgfiles": "egg-bin pkgfiles --check",
-    "ci": "npm run autod -- --check && npm run pkgfiles && npm run lint && npm run cov",
-    "contributors": "contributors -f plain -o AUTHORS"
+    "ci": "egg-bin cov",
+    "contributors": "git-contributor"
   },
   "repository": {
     "type": "git",
@@ -37,8 +34,6 @@
   "homepage": "https://github.com/eggjs/egg-rpc-generator#readme",
   "dependencies": {
     "antpb": "^1.0.0",
-    "chalk": "^2.4.2",
-    "debug": "^4.1.1",
     "egg-utils": "^2.4.1",
     "handlebars": "^4.0.12",
     "interop-require": "^1.0.0",
@@ -51,22 +46,16 @@
     "mz-modules": "^2.1.0",
     "nunjucks": "^3.1.7",
     "rimraf": "^2.6.3",
-    "sdk-base": "^3.5.1"
+    "sdk-base": "^4.2.1"
   },
   "devDependencies": {
-    "autod": "^3.0.1",
-    "contributors": "^0.5.1",
-    "egg": "^2.14.2",
-    "egg-bin": "^4.10.0",
-    "egg-ci": "^1.11.0",
-    "eslint": "^5.12.0",
-    "eslint-config-egg": "^7.1.0"
+    "egg": "^3.16.1",
+    "egg-bin": "^6.4.1",
+    "eslint": "^8.42.0",
+    "eslint-config-egg": "^12.2.1",
+    "git-contributor": "^2.1.5"
   },
   "engines": {
-    "node": ">= 8.0.0"
-  },
-  "ci": {
-    "type": "travis",
-    "version": "8, 10"
+    "node": ">= 14.17.0"
   }
 }

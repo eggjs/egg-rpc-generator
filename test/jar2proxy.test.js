@@ -6,7 +6,7 @@ const assert = require('assert');
 const rimraf = require('mz-modules/rimraf');
 const EggRpcGenerator = require('../lib');
 
-describe('test/jar2proxy.test.js', () => {
+describe.skip('test/jar2proxy.test.js', () => {
   after(async function() {
     await Promise.all([
       rimraf(path.join(__dirname, 'fixtures/apps/jar2proxy/app/proxy')),

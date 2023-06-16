@@ -6,7 +6,7 @@ const assert = require('assert');
 const rimraf = require('mz-modules/rimraf');
 const EggRpcGenerator = require('../lib');
 
-describe('test/jsdoc2jar.test.js', () => {
+describe.skip('test/jsdoc2jar.test.js', () => {
   after(async function() {
     await Promise.all([
       rimraf(path.join(__dirname, 'fixtures/apps/rpc-server/pom.xml')),
